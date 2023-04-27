@@ -1,0 +1,954 @@
+Started GET "/" for ::1 at 2023-01-10 14:18:55 +0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.5ms | Allocations: 931)
+Completed 200 OK in 18ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 7979)
+
+
+Started GET "/" for ::1 at 2023-01-10 14:24:17 +0500
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230110092319_create_calendars.rb
+
+
+):
+  
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.5) lib/rack/method_override.rb:24:in `call'
+rack (2.2.5) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.5) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCalendars (20230110092319)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "calendars" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "title" varchar, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230110092319"]]
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-01-10 09:24:27.151472"], ["updated_at", "2023-01-10 09:24:27.151472"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-01-10 14:24:33 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.8ms | Allocations: 826)
+Completed 200 OK in 20ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 6718)
+
+
+Started GET "/" for ::1 at 2023-01-10 14:25:02 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant CalendarController
+Did you mean?  CalendarsController):
+  
+Started GET "/" for ::1 at 2023-01-10 14:25:09 +0500
+Processing by CalendarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:6
+  Rendered calendars/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1491)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 6222)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms | Allocations: 10998)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2023-01-10 14:25:24 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CalendarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:6
+  Rendered calendars/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1799)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 5987)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.3ms | Allocations: 12790)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2023-01-10 14:26:06 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CalendarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.2ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:6
+  Rendered calendars/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1797)
+  Rendered layout layouts/application.html.erb (Duration: 247.7ms | Allocations: 94797)
+Completed 200 OK in 266ms (Views: 261.0ms | ActiveRecord: 0.2ms | Allocations: 101660)
+
+
+Started GET "/calendars/new" for ::1 at 2023-01-10 14:26:08 +0500
+Processing by CalendarsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered calendars/_form.html.erb (Duration: 40.5ms | Allocations: 5755)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 43.1ms | Allocations: 6138)
+  Rendered layout layouts/application.html.erb (Duration: 48.0ms | Allocations: 8542)
+Completed 200 OK in 88ms (Views: 49.4ms | ActiveRecord: 1.8ms | Allocations: 25444)
+
+
+Started POST "/calendars" for ::1 at 2023-01-10 14:26:15 +0500
+Processing by CalendarsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "calendar"=>{"name"=>"Rhonda Huber", "title"=>"Rem id praesentium ", "content"=>"Iusto ab et in quibu"}, "commit"=>"Create Calendar"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/calendars_controller.rb:27:in `block in create'
+  [1m[36mCalendar Create (0.6ms)[0m  [1m[32mINSERT INTO "calendars" ("name", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Rhonda Huber"], ["title", "Rem id praesentium "], ["content", "Iusto ab et in quibu"], ["created_at", "2023-01-10 09:26:15.558625"], ["updated_at", "2023-01-10 09:26:15.558625"]]
+  ↳ app/controllers/calendars_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/calendars_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/calendars/1
+Completed 302 Found in 22ms (ActiveRecord: 6.8ms | Allocations: 3899)
+
+
+Started GET "/calendars/1" for ::1 at 2023-01-10 14:26:15 +0500
+Processing by CalendarsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:63:in `set_calendar'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 1.1ms | Allocations: 297)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1863)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4242)
+Completed 200 OK in 25ms (Views: 14.3ms | ActiveRecord: 0.5ms | Allocations: 7396)
+
+
+Started DELETE "/calendars/1" for ::1 at 2023-01-10 14:26:16 +0500
+Processing by CalendarsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:63:in `set_calendar'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/calendars_controller.rb:52:in `destroy'
+  [1m[36mCalendar Destroy (0.6ms)[0m  [1m[31mDELETE FROM "calendars" WHERE "calendars"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/calendars_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/calendars_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/calendars
+Completed 302 Found in 56ms (ActiveRecord: 14.2ms | Allocations: 2725)
+
+
+Started GET "/calendars" for ::1 at 2023-01-10 14:26:16 +0500
+Processing by CalendarsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:6
+  Rendered calendars/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 823)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 3109)
+Completed 200 OK in 36ms (Views: 28.8ms | ActiveRecord: 0.1ms | Allocations: 3473)
+
+
+Started GET "/calendars/new" for ::1 at 2023-01-10 14:26:17 +0500
+Processing by CalendarsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered calendars/_form.html.erb (Duration: 7.9ms | Allocations: 1382)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1472)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 3744)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms | Allocations: 4092)
+
+
+Started POST "/calendars" for ::1 at 2023-01-10 14:26:21 +0500
+Processing by CalendarsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "calendar"=>{"name"=>"Madonna Hester", "title"=>"Deserunt necessitati", "content"=>"Voluptas quo sed exc"}, "commit"=>"Create Calendar"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/calendars_controller.rb:27:in `block in create'
+  [1m[36mCalendar Create (0.7ms)[0m  [1m[32mINSERT INTO "calendars" ("name", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Madonna Hester"], ["title", "Deserunt necessitati"], ["content", "Voluptas quo sed exc"], ["created_at", "2023-01-10 09:26:21.670510"], ["updated_at", "2023-01-10 09:26:21.670510"]]
+  ↳ app/controllers/calendars_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/calendars_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/calendars/2
+Completed 302 Found in 23ms (ActiveRecord: 7.7ms | Allocations: 2442)
+
+
+Started GET "/calendars/2" for ::1 at 2023-01-10 14:26:21 +0500
+Processing by CalendarsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars" WHERE "calendars"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:63:in `set_calendar'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  Rendered calendars/_calendar.html.erb (Duration: 0.3ms | Allocations: 21)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 662)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 2928)
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 0.3ms | Allocations: 3724)
+
+
+Started GET "/calendars" for ::1 at 2023-01-10 14:26:23 +0500
+Processing by CalendarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.4ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:6
+  Rendered calendars/_calendar.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered calendars/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 931)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 3216)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.4ms | Allocations: 3549)
+
+
+Started GET "/calendars" for ::1 at 2023-01-10 14:40:21 +0500
+Processing by CalendarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.3ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:6
+  Rendered calendars/_calendar.html.erb (Duration: 2.8ms | Allocations: 244)
+  Rendered calendars/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1963)
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 4681)
+Completed 200 OK in 49ms (Views: 45.4ms | ActiveRecord: 1.4ms | Allocations: 5831)
+
+
+Started GET "/calendars/new" for ::1 at 2023-01-10 14:40:25 +0500
+Processing by CalendarsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 17.0ms | Allocations: 9065)
+  Rendered calendars/_form.html.erb (Duration: 24.3ms | Allocations: 11453)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 26.2ms | Allocations: 11760)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 14021)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.0ms | Allocations: 14436)
+
+
+Started GET "/calendars/new?start_date=2023-02-06" for ::1 at 2023-01-10 14:40:31 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-02-06"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 29.4ms | Allocations: 8550)
+  Rendered calendars/_form.html.erb (Duration: 37.3ms | Allocations: 10133)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 38.0ms | Allocations: 10220)
+  Rendered layout layouts/application.html.erb (Duration: 47.2ms | Allocations: 12480)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.0ms | Allocations: 12818)
+
+
+Started GET "/calendars/new?start_date=2023-03-06" for ::1 at 2023-01-10 14:40:33 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-03-06"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 28.7ms | Allocations: 8334)
+  Rendered calendars/_form.html.erb (Duration: 34.7ms | Allocations: 9915)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 35.4ms | Allocations: 10002)
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 12262)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.0ms | Allocations: 12599)
+
+
+Started GET "/calendars/new?start_date=2023-03-06" for ::1 at 2023-01-10 14:55:36 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-03-06"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 45.0ms | Allocations: 8905)
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_week_calendar.html.erb (Duration: 13.4ms | Allocations: 4172)
+  Rendered calendars/_form.html.erb (Duration: 74.9ms | Allocations: 15887)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 77.5ms | Allocations: 16231)
+  Rendered layout layouts/application.html.erb (Duration: 82.0ms | Allocations: 18904)
+Completed 200 OK in 92ms (Views: 87.9ms | Allocations: 20030)
+
+
+Started GET "/calendars/new?start_date=2023-03-20" for ::1 at 2023-01-10 14:58:07 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-03-20"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 16.2ms | Allocations: 8332)
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_week_calendar.html.erb (Duration: 4.9ms | Allocations: 3718)
+  Rendered calendars/_form.html.erb (Duration: 25.0ms | Allocations: 13834)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 25.4ms | Allocations: 13921)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 16181)
+Completed 200 OK in 31ms (Views: 30.0ms | Allocations: 16538)
+
+
+Started GET "/calendars/new?start_date=2023-04-03" for ::1 at 2023-01-10 14:58:09 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-04-03"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 25.2ms | Allocations: 8406)
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_week_calendar.html.erb (Duration: 5.9ms | Allocations: 3574)
+  Rendered calendars/_form.html.erb (Duration: 35.8ms | Allocations: 13755)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 36.4ms | Allocations: 13842)
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | Allocations: 16102)
+Completed 200 OK in 42ms (Views: 40.7ms | Allocations: 16435)
+
+
+Started GET "/calendars/new?start_date=2023-04-17" for ::1 at 2023-01-10 14:58:10 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-04-17"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 20.7ms | Allocations: 8405)
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_week_calendar.html.erb (Duration: 4.9ms | Allocations: 3574)
+  Rendered calendars/_form.html.erb (Duration: 30.1ms | Allocations: 13766)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 30.5ms | Allocations: 13853)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 16113)
+Completed 200 OK in 36ms (Views: 34.5ms | Allocations: 16446)
+
+
+Started GET "/calendars/new?start_date=2023-05-01" for ::1 at 2023-01-10 14:58:10 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-05-01"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 25.6ms | Allocations: 8332)
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_week_calendar.html.erb (Duration: 5.8ms | Allocations: 3574)
+  Rendered calendars/_form.html.erb (Duration: 36.7ms | Allocations: 13684)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 37.2ms | Allocations: 13771)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 16031)
+Completed 200 OK in 43ms (Views: 41.9ms | Allocations: 16364)
+
+
+Started GET "/calendars/new?start_date=2023-05-15" for ::1 at 2023-01-10 14:58:11 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-05-15"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 28.3ms | Allocations: 8332)
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_week_calendar.html.erb (Duration: 6.3ms | Allocations: 3573)
+  Rendered calendars/_form.html.erb (Duration: 40.0ms | Allocations: 13680)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 40.6ms | Allocations: 13767)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 16027)
+Completed 200 OK in 47ms (Views: 45.5ms | Allocations: 16360)
+
+
+Started GET "/calendars/new?start_date=2023-05-29" for ::1 at 2023-01-10 14:58:12 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-05-29"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 19.7ms | Allocations: 8331)
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_week_calendar.html.erb (Duration: 6.1ms | Allocations: 4366)
+  Rendered calendars/_form.html.erb (Duration: 31.0ms | Allocations: 14463)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 31.4ms | Allocations: 14550)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 16810)
+Completed 200 OK in 37ms (Views: 35.5ms | Allocations: 17143)
+
+
+Started GET "/calendars/new?start_date=2023-06-12" for ::1 at 2023-01-10 14:58:13 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-06-12"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 27.8ms | Allocations: 8404)
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_week_calendar.html.erb (Duration: 6.7ms | Allocations: 3574)
+  Rendered calendars/_form.html.erb (Duration: 39.7ms | Allocations: 13744)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 40.1ms | Allocations: 13831)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 16091)
+Completed 200 OK in 47ms (Views: 45.1ms | Allocations: 16424)
+
+
+Started GET "/calendars/new?start_date=2023-06-26" for ::1 at 2023-01-10 14:58:15 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-06-26"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 23.6ms | Allocations: 8403)
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_week_calendar.html.erb (Duration: 5.5ms | Allocations: 4222)
+  Rendered calendars/_form.html.erb (Duration: 33.3ms | Allocations: 14409)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 33.7ms | Allocations: 14496)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 16756)
+Completed 200 OK in 39ms (Views: 37.5ms | Allocations: 17089)
+
+
+Started GET "/calendars/new?start_date=2023-07-10" for ::1 at 2023-01-10 14:58:16 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-07-10"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 22.6ms | Allocations: 10335)
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_week_calendar.html.erb (Duration: 4.3ms | Allocations: 3574)
+  Rendered calendars/_form.html.erb (Duration: 31.8ms | Allocations: 15664)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 32.2ms | Allocations: 15751)
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 18011)
+Completed 200 OK in 37ms (Views: 35.9ms | Allocations: 18344)
+
+
+Started GET "/calendars/new?start_date=2023-07-10" for ::1 at 2023-01-10 16:10:52 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-07-10"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 47.6ms | Allocations: 10908)
+  Rendered calendars/_form.html.erb (Duration: 60.0ms | Allocations: 13353)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 62.9ms | Allocations: 13699)
+  Rendered layout layouts/application.html.erb (Duration: 67.9ms | Allocations: 16384)
+Completed 200 OK in 93ms (Views: 90.1ms | Allocations: 17512)
+
+
+Started GET "/calendars/new?start_date=2023-07-10" for ::1 at 2023-01-10 16:13:47 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-07-10"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 60.5ms | Allocations: 10335)
+  Rendered calendars/_form.html.erb (Duration: 69.9ms | Allocations: 11911)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 70.7ms | Allocations: 11998)
+  Rendered layout layouts/application.html.erb (Duration: 88.8ms | Allocations: 16600)
+Completed 200 OK in 97ms (Views: 95.2ms | Allocations: 16955)
+
+
+Started GET "/calendars/new?start_date=2023-07-10" for ::1 at 2023-01-10 16:13:52 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-07-10"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 49.2ms | Allocations: 10335)
+  Rendered calendars/_form.html.erb (Duration: 56.1ms | Allocations: 11911)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 56.8ms | Allocations: 11998)
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 14301)
+Completed 200 OK in 67ms (Views: 65.7ms | Allocations: 14634)
+
+
+Started GET "/calendars/new?start_date=2023-07-10" for ::1 at 2023-01-10 16:16:59 +0500
+Processing by CalendarsController#new as HTML
+  Parameters: {"start_date"=>"2023-07-10"}
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered calendars/_form.html.erb (Duration: 36.0ms | Allocations: 5282)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 39.2ms | Allocations: 5609)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 5690)
+Completed 500 Internal Server Error in 50ms (Allocations: 6797)
+
+
+  
+ActionView::Template::Error (undefined method `reject' for nil:NilClass):
+    10:       </ul>
+    11:     </div>
+    12:   <% end %>
+    13:   <%= month_calendar events: @calendars do |date, calendars| %>
+    14:     <%= date %>
+    15:     <% calendars.each do |calendar| %>
+    16:        <%= calendar.name %>
+  
+app/views/calendars/_form.html.erb:13
+app/views/calendars/_form.html.erb:1
+app/views/calendars/new.html.erb:3
+Started GET "/calendars/" for ::1 at 2023-01-10 16:17:19 +0500
+Processing by CalendarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.1ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:6
+  Rendered calendars/_calendar.html.erb (Duration: 0.8ms | Allocations: 240)
+  Rendered calendars/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1837)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4553)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.4ms | Allocations: 5000)
+
+
+Started GET "/calendars/new" for ::1 at 2023-01-10 16:17:21 +0500
+Processing by CalendarsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered calendars/_form.html.erb (Duration: 6.2ms | Allocations: 1860)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1920)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 1995)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2309)
+
+
+  
+ActionView::Template::Error (undefined method `reject' for nil:NilClass):
+    10:       </ul>
+    11:     </div>
+    12:   <% end %>
+    13:   <%= month_calendar events: @calendars do |date, calendars| %>
+    14:     <%= date %>
+    15:     <% calendars.each do |calendar| %>
+    16:        <%= calendar.name %>
+  
+app/views/calendars/_form.html.erb:13
+app/views/calendars/_form.html.erb:1
+app/views/calendars/new.html.erb:3
+Started GET "/calendars/new" for ::1 at 2023-01-10 16:17:45 +0500
+Processing by CalendarsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered calendars/_form.html.erb (Duration: 4.1ms | Allocations: 2464)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2779)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2860)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3956)
+
+
+  
+ActionView::Template::Error (undefined method `reject' for nil:NilClass):
+    10:       </ul>
+    11:     </div>
+    12:   <% end %>
+    13:   <%= month_calendar events: @calendars do |date, calendars| %>
+    14:     <%= date %>
+    15:     <% calendars.each do |calendar| %>
+    16:       <% byebug %>
+  
+app/views/calendars/_form.html.erb:13
+app/views/calendars/_form.html.erb:1
+app/views/calendars/new.html.erb:3
+Started GET "/calendars/new" for ::1 at 2023-01-10 16:19:09 +0500
+Processing by CalendarsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/new.html.erb within layouts/application
+  Rendered calendars/_form.html.erb (Duration: 11.8ms | Allocations: 1950)
+  Rendered calendars/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 2302)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 5003)
+Completed 200 OK in 49ms (Views: 42.7ms | ActiveRecord: 0.0ms | Allocations: 6161)
+
+
+Started GET "/calendars/" for ::1 at 2023-01-10 16:19:13 +0500
+Processing by CalendarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/index.html.erb within layouts/application
+  [1m[36mCalendar Load (0.5ms)[0m  [1m[34mSELECT "calendars".* FROM "calendars"[0m
+  ↳ app/views/calendars/index.html.erb:4
+  Rendered calendars/index.html.erb within layouts/application (Duration: 21.1ms | Allocations: 5536)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 5611)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.5ms | Allocations: 6013)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for #<Calendar id: 2, name: "Madonna Hester", title: "Deserunt necessitati", content: "Voluptas quo sed exc", created_at: "2023-01-10 09:26:21.670510000 +0000", updated_at: "2023-01-10 09:26:21.670510000 +0000">):
+    1: <p style="color: green"><%= notice %></p>
+    2: 
+    3: <h1>Calendars</h1>
+    4: <%= month_calendar events: @calendars do |date, calendars| %>
+    5:   <%= date %>
+    6:   <% calendars.each do |calendar| %>
+    7:     <%= calendar.name %>
+  
+app/views/calendars/index.html.erb:4
+Started GET "/" for ::1 at 2023-01-10 16:20:39 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230110111937_create_meetings.rb
+
+
+):
+  
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.5) lib/rack/method_override.rb:24:in `call'
+rack (2.2.5) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.5) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMeetings (20230110111937)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "meetings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_time" datetime(6), "end_time" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230110111937"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-01-10 16:20:56 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 8.1ms | Allocations: 10084)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 12693)
+  Rendered layout layouts/application.html.erb (Duration: 61.0ms | Allocations: 50305)
+Completed 200 OK in 69ms (Views: 62.9ms | ActiveRecord: 0.1ms | Allocations: 57198)
+
+
+Started GET "/" for ::1 at 2023-01-10 16:21:20 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 9.5ms | Allocations: 8613)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 10431)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 13133)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.1ms | Allocations: 14354)
+
+
+Started GET "/" for ::1 at 2023-01-10 16:21:21 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.4ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 64.2ms | Allocations: 8022)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 70.2ms | Allocations: 9089)
+  Rendered layout layouts/application.html.erb (Duration: 75.9ms | Allocations: 11381)
+Completed 200 OK in 79ms (Views: 76.9ms | ActiveRecord: 0.4ms | Allocations: 11745)
+
+
+Started GET "/" for ::1 at 2023-01-10 16:21:22 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 38.6ms | Allocations: 8021)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 44.2ms | Allocations: 9091)
+  Rendered layout layouts/application.html.erb (Duration: 53.4ms | Allocations: 11367)
+Completed 200 OK in 58ms (Views: 55.3ms | ActiveRecord: 0.3ms | Allocations: 11706)
+
+
+Started GET "/" for ::1 at 2023-01-10 16:21:22 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 10.0ms | Allocations: 8019)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 9067)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 11349)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.1ms | Allocations: 11680)
+
+
+Started GET "/" for ::1 at 2023-01-10 16:21:22 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.4ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 47.0ms | Allocations: 8019)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 52.8ms | Allocations: 9079)
+  Rendered layout layouts/application.html.erb (Duration: 70.3ms | Allocations: 11359)
+Completed 200 OK in 74ms (Views: 72.1ms | ActiveRecord: 0.4ms | Allocations: 11690)
+
+
+Started GET "/" for ::1 at 2023-01-10 16:21:22 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 38.4ms | Allocations: 8019)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 43.6ms | Allocations: 9076)
+  Rendered layout layouts/application.html.erb (Duration: 50.6ms | Allocations: 11349)
+Completed 200 OK in 54ms (Views: 52.2ms | ActiveRecord: 0.2ms | Allocations: 11681)
+
+
+Started GET "/" for ::1 at 2023-01-10 16:21:22 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.4ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 43.6ms | Allocations: 8019)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 52.5ms | Allocations: 9067)
+  Rendered layout layouts/application.html.erb (Duration: 66.9ms | Allocations: 11340)
+Completed 200 OK in 70ms (Views: 68.4ms | ActiveRecord: 0.4ms | Allocations: 11671)
+
+
+Started GET "/meetings/new" for ::1 at 2023-01-10 16:21:26 +0500
+Processing by MeetingsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/_form.html.erb (Duration: 14.3ms | Allocations: 3620)
+  Rendered meetings/new.html.erb within layouts/application (Duration: 15.1ms | Allocations: 3987)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 6398)
+Completed 200 OK in 136ms (Views: 21.7ms | ActiveRecord: 1.7ms | Allocations: 25032)
+
+
+Started POST "/meetings" for ::1 at 2023-01-10 16:21:32 +0500
+Processing by MeetingsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "meeting"=>{"name"=>"", "start_time"=>"", "end_time"=>""}, "commit"=>"Create Meeting"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meetings_controller.rb:27:in `block in create'
+  [1m[36mMeeting Create (0.8ms)[0m  [1m[32mINSERT INTO "meetings" ("name", "start_time", "end_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", ""], ["start_time", nil], ["end_time", nil], ["created_at", "2023-01-10 11:21:32.866572"], ["updated_at", "2023-01-10 11:21:32.866572"]]
+  ↳ app/controllers/meetings_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meetings_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/meetings/1
+Completed 302 Found in 30ms (ActiveRecord: 13.7ms | Allocations: 3919)
+
+
+Started GET "/meetings/1" for ::1 at 2023-01-10 16:21:32 +0500
+Processing by MeetingsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mMeeting Load (0.5ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meetings_controller.rb:63:in `set_meeting'
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/show.html.erb within layouts/application
+  Rendered meetings/_meeting.html.erb (Duration: 1.7ms | Allocations: 298)
+  Rendered meetings/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1774)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 4153)
+Completed 200 OK in 30ms (Views: 20.2ms | ActiveRecord: 0.5ms | Allocations: 7305)
+
+
+Started DELETE "/meetings/1" for ::1 at 2023-01-10 16:21:34 +0500
+Processing by MeetingsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meetings_controller.rb:63:in `set_meeting'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meetings_controller.rb:52:in `destroy'
+  [1m[36mMeeting Destroy (0.6ms)[0m  [1m[31mDELETE FROM "meetings" WHERE "meetings"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/meetings_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meetings_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/meetings
+Completed 302 Found in 24ms (ActiveRecord: 12.7ms | Allocations: 2718)
+
+
+Started GET "/meetings" for ::1 at 2023-01-10 16:21:34 +0500
+Processing by MeetingsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 10.7ms | Allocations: 8068)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 9210)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 11496)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.1ms | Allocations: 11858)
+
+
+Started GET "/meetings/new" for ::1 at 2023-01-10 16:21:36 +0500
+Processing by MeetingsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/_form.html.erb (Duration: 6.1ms | Allocations: 1345)
+  Rendered meetings/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1432)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 3705)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 4045)
+
+
+Started POST "/meetings" for ::1 at 2023-01-10 16:21:55 +0500
+Processing by MeetingsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "meeting"=>{"name"=>"Testing Demo", "start_time"=>"2023-01-11T16:21", "end_time"=>"2023-01-11T16:21"}, "commit"=>"Create Meeting"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/meetings_controller.rb:27:in `block in create'
+  [1m[36mMeeting Create (0.7ms)[0m  [1m[32mINSERT INTO "meetings" ("name", "start_time", "end_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Testing Demo"], ["start_time", "2023-01-11 16:21:00"], ["end_time", "2023-01-11 16:21:00"], ["created_at", "2023-01-10 11:21:55.323552"], ["updated_at", "2023-01-10 11:21:55.323552"]]
+  ↳ app/controllers/meetings_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/meetings_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/meetings/2
+Completed 302 Found in 24ms (ActiveRecord: 7.0ms | Allocations: 2567)
+
+
+Started GET "/meetings/2" for ::1 at 2023-01-10 16:21:55 +0500
+Processing by MeetingsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meetings_controller.rb:63:in `set_meeting'
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/show.html.erb within layouts/application
+  Rendered meetings/_meeting.html.erb (Duration: 0.4ms | Allocations: 71)
+  Rendered meetings/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 709)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2970)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 3767)
+
+
+Started GET "/meetings" for ::1 at 2023-01-10 16:21:56 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 23.0ms | Allocations: 8024)
+  Rendered meetings/_meeting.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 29.2ms | Allocations: 9255)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 11528)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.3ms | Allocations: 11861)
+
+
+Started GET "/meetings" for ::1 at 2023-01-10 16:22:15 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 14.9ms | Allocations: 8618)
+  Rendered meetings/_meeting.html.erb (Duration: 0.7ms | Allocations: 242)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 10944)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 13643)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.3ms | Allocations: 14794)
+
+
+Started GET "/meetings" for ::1 at 2023-01-10 16:22:16 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 30.8ms | Allocations: 8024)
+  Rendered meetings/_meeting.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 39.5ms | Allocations: 9263)
+  Rendered layout layouts/application.html.erb (Duration: 45.5ms | Allocations: 11536)
+Completed 200 OK in 50ms (Views: 47.1ms | ActiveRecord: 0.3ms | Allocations: 11888)
+
+
+Started GET "/meetings" for ::1 at 2023-01-10 16:22:17 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 46.5ms | Allocations: 8024)
+  Rendered meetings/_meeting.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 53.4ms | Allocations: 9254)
+  Rendered layout layouts/application.html.erb (Duration: 59.6ms | Allocations: 11527)
+Completed 200 OK in 62ms (Views: 60.5ms | ActiveRecord: 0.3ms | Allocations: 11858)
+
+
+Started GET "/meetings/new" for ::1 at 2023-01-10 16:22:21 +0500
+Processing by MeetingsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/new.html.erb within layouts/application
+  Rendered meetings/_form.html.erb (Duration: 8.8ms | Allocations: 1823)
+  Rendered meetings/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2129)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 4398)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 4793)
+
+
+Started GET "/meetings" for ::1 at 2023-01-10 16:22:29 +0500
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.5ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 37.9ms | Allocations: 8025)
+  Rendered meetings/_meeting.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 49.2ms | Allocations: 9367)
+  Rendered layout layouts/application.html.erb (Duration: 59.9ms | Allocations: 11715)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.5ms | Allocations: 12048)
+
+
+Started GET "/" for ::1 at 2023-04-27 18:29:10 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeetingsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.1ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 16.0ms | Allocations: 8691)
+  Rendered meetings/_meeting.html.erb (Duration: 0.7ms | Allocations: 321)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 31.9ms | Allocations: 28780)
+  Rendered layout layouts/application.html.erb (Duration: 85.4ms | Allocations: 65544)
+Completed 200 OK in 96ms (Views: 88.2ms | ActiveRecord: 0.5ms | Allocations: 72426)
+
+
+Started GET "/meetings?start_date=2023-05-01" for ::1 at 2023-04-27 18:29:17 +0500
+Processing by MeetingsController#index as HTML
+  Parameters: {"start_date"=>"2023-05-01"}
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 14.8ms | Allocations: 8428)
+  Rendered meetings/_meeting.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 10144)
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 12460)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.3ms | Allocations: 12868)
+
+
+Started GET "/meetings?start_date=2023-04-30" for ::1 at 2023-04-27 18:29:20 +0500
+Processing by MeetingsController#index as HTML
+  Parameters: {"start_date"=>"2023-04-30"}
+  Rendering layout layouts/application.html.erb
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/index.html.erb:4
+  Rendered /home/southville/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/gems/simple_calendar-2.4.3/app/views/simple_calendar/_month_calendar.html.erb (Duration: 20.5ms | Allocations: 8419)
+  Rendered meetings/_meeting.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered meetings/index.html.erb within layouts/application (Duration: 27.7ms | Allocations: 9933)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 12208)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.3ms | Allocations: 12549)
+
+
